@@ -2,10 +2,22 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
   <display-name>LMS Mobile Services</display-name>
+  	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>org.agl.servlets.TestServlet</servlet-class>
+		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/servlets/test</url-pattern>
+	</servlet-mapping>
   
-  <servlet>
+  	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
@@ -13,7 +25,7 @@
 
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
-		<url-pattern>/lmsservices/</url-pattern>
+		<url-pattern>/lmsservices</url-pattern>
 	</servlet-mapping>
 
 	<context-param>
