@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <!-- V0 beans -->
+    <bean id="guesthomeAddress1v0" class="org.agl.lmsmobile.beans.GuestHomeAddress">
+        <property name="addressType" value="HOME"></property>
+    </bean>
+    
+    <bean id="guestworkAddress1v0" class="org.agl.lmsmobile.beans.GuestWorkAddress">
+        <property name="addressType" value="WORK"></property>
+    </bean>
+    
+    <bean id="propertyAddress1v0" class="org.agl.lmsmobile.beans.PropertyAddress">
+        
+    </bean>
+    
+	<bean id="guest1v0" class="org.agl.lmsmobile.beans.Guest">
+        <property name="guestAddresses">
+            <map>
+                <entry key="HOME" value-ref="guesthomeAddress1v0"></entry>
+                <entry key="WORK" value-ref="guestworkAddress1v0"></entry>
+            </map>
+        </property>
+        <property name="phoneNumbers">
+            <props>
+                <prop key="HOME"></prop>
+                <prop key="WORK"></prop>
+            </props>
+        </property>
+    </bean>   
+    
+    
+    <bean id="resource1v0" class="org.agl.lmsmobile.beans.Resource">
+        <property name="guest" ref="guest1v0" />
+        <property name="propertyAddress" ref="propertyAddress1v0" />
+    </bean>
+    
+    <!-- V1 beans -->
+    <bean id="guestAddress1v1" class="org.agl.lmsmobile.beans.v1.GuestAddress">
+        
+    </bean>
+    
+    <bean id="propertyAddress1v1" class="org.agl.lmsmobile.beans.v1.PropertyAddress">
+        
+    </bean>
+    
+	<bean id="guest1v1" class="org.agl.lmsmobile.beans.v1.Guest">
+        <property name="guestAddress" ref="guestAddress1v1" />
+    </bean>   
+    
+    
+    <bean id="resource1v1" class="org.agl.lmsmobile.beans.v1.Resource">
+        <property name="guest" ref="guest1v1" />
+        <property name="propertyAddress" ref="propertyAddress1v1" />
+    </bean>
+    
+    </beans>
+    
+   

@@ -20,7 +20,7 @@ public class DemoController {
 			@PathVariable("date") final String date,
 			@PathVariable("city") final String city) {
  
-		System.out.println("Yes " + name + " am alive on " + date + " and staying in " + city);
+		System.out.println("Yes " + name + " is alive on " + date + " and staying in " + city);
 		return "Yes " + name + " is alive on " + date + " and staying in " + city;
  
 	}
